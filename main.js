@@ -1,24 +1,83 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// export const catalogo = [
+//   {
+//     id: "1",
+//     marca: "Zara",
+//     nome: "Camisa Larga com Bolsos",
+//     preco: 70,
+//     imagem: "product-1.jpg",
+//     feminino: false,
+//   },
+//   {
+//     id: "2",
+//     marca: "Zara",
+//     nome: "Casaco Reto com Lã",
+//     preco: 85,
+//     imagem: "product-2.jpg",
+//     feminino: true,
+//   },
+//   {
+//     id: "3",
+//     marca: "Zara",
+//     nome: "Jaqueta com Efeito Camurça",
+//     preco: 60,
+//     imagem: "product-3.jpg",
+//     feminino: false,
+//   },
+//   {
+//     id: "4",
+//     marca: "Zara",
+//     nome: "Sobretudo em Mescla de Lã",
+//     preco: 160,
+//     imagem: "product-4.jpg",
+//     feminino: false,
+//   },
+//   {
+//     id: "5",
+//     marca: "Zara",
+//     nome: "Camisa Larga Acolchoada de Veludo Cotelê",
+//     preco: 110,
+//     imagem: "product-5.jpg",
+//     feminino: false,
+//   },
+//   {
+//     id: "6",
+//     marca: "Zara",
+//     nome: "Casaco de Lã com Botões",
+//     preco: 170,
+//     imagem: "product-6.jpg",
+//     feminino: true,
+//   },
+//   {
+//     id: "7",
+//     marca: "Zara",
+//     nome: "Casaco com Botões",
+//     preco: 75,
+//     imagem: "product-7.jpg",
+//     feminino: true,
+//   },
+//   {
+//     id: "8",
+//     marca: "Zara",
+//     nome: "Colete Comprido com Cinto",
+//     preco: 88,
+//     imagem: "product-8.jpg",
+//     feminino: true,
+//   },
+// ];
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const cart = document.querySelector("#cart")
+const cartOpenButton = document.querySelector("#cart-open-button")
+const cartCloseButton = document.querySelector("#cart-close-button")
 
-setupCounter(document.querySelector('#counter'))
+function openCart() {
+    cart.classList.remove("-right-96")
+    cart.classList.add("right-0")
+}
+
+function closeCart() {
+    cart.classList.remove("right-0")
+    cart.classList.add("-right-96")
+}
+
+cartOpenButton.addEventListener("click", openCart)
+cartCloseButton.addEventListener("click", closeCart)

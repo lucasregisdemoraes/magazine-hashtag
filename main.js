@@ -2,6 +2,9 @@ import { addProductToCart, startCart } from "./src/cart";
 import { catalogo, convertValueToCurrency, renderProductsElementsOnTheList } from "./src/utilidades"
 
 const productsList = document.querySelector("#products-list")
+const filterByAll = document.querySelector("#filter-by-all")
+const filterByMens = document.querySelector("#filter-by-mens")
+const filterByWomens = document.querySelector("#filter-by-womens")
 
 function createProductElement({ id, brand, name, price, image, womans }, index) {
   let li = document.createElement("li")
@@ -24,12 +27,25 @@ function createProductElement({ id, brand, name, price, image, womans }, index) 
   return li
 }
 
-renderProductsElementsOnTheList(catalogo, createProductElement, productsList)
+function filterBy(value) {
+  let products = catalogo
+  if (value === "mens") {
+    products = products.filter(product => !product.womans)
+  } else if (value === "womens") {
+    products = products.filter(product => product.womans)
+  }
 
+  renderProductsElementsOnTheList(products, createProductElement, productsList)
+}
 
 const addCartButtons = document.querySelectorAll("#products-list li button")
 addCartButtons.forEach(button => {
   button.addEventListener("click", (e) => addProductToCart(e.currentTarget.dataset.id))
 })
 
+filterByAll.addEventListener("click", () => filterBy("all"))
+filterByMens.addEventListener("click", () => filterBy("mens"))
+filterByWomens.addEventListener("click", () => filterBy("womens"))
+
+renderProductsElementsOnTheList(catalogo, createProductElement, productsList)
 startCart()

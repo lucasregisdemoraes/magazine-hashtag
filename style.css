@@ -6,12 +6,32 @@ button {
     @apply hover:opacity-70 transition-opacity;
 }
 
+section#filters div label {
+    @apply hover:text-slate-200 hover:bg-slate-950 hover:font-bold hover:text-lg px-2 py-1.5 rounded-md transition-all cursor-pointer;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(30px);
+        filter: opacity(0)
+    }
+}
+
 section#products ul li {
+    --delay: 100ms;
+    animation: appear 1s var(--delay);
+    
+
+    /* animate-[wiggle_1s_ease-in-out_var(--delay)] */
     @apply bg-stone-100 w-48 flex flex-col p-2 overflow-hidden rounded-lg shadow-xl shadow-slate-400;
 }
 
 section#products ul li img {
     @apply rounded-lg mb-2 duration-300;
+}
+
+section#products ul li .price {
+    @apply mt-auto;
 }
 
 section#products ul li button {
@@ -22,7 +42,7 @@ aside #cart-products li {
     @apply bg-slate-200 rounded-md flex gap-2 items-center p-1 relative;
 }
 
-aside #cart-products li .close-button {
+aside #cart-products li .remove-button {
     @apply absolute right-2 top-2 text-slate-700 leading-none;
 }
 

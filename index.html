@@ -33,79 +33,23 @@
   <main class="flex flex-col items-center px-10 flex-1">
     <section class="py-12 flex gap-2" id="filters">
       <div>
-        <input class="peer hidden" type="radio" name="filter-by" id="filter-by-all">
-        <label
-          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold px-2 py-1.5 rounded-md"
-          for="filter-by-all">Todos</label>
+        <input checked class="peer hidden" type="radio" name="filter-by" id="filter-by-all">
+        <label for="filter-by-all"
+          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold">Todos</label>
       </div>
       <div>
         <input class="peer hidden" type="radio" name="filter-by" id="filter-by-mens">
-        <label
-          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold px-2 py-1.5 rounded-md"
-          for="filter-by-mens">Masculinos</label>
+        <label for="filter-by-mens"
+          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold">Masculinos</label>
       </div>
       <div>
         <input class="peer hidden" type="radio" name="filter-by" id="filter-by-womens">
-        <label
-          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold px-2 py-1.5 rounded-md"
-          for="filter-by-womens">Femininos</label>
+        <label for="filter-by-womens"
+          class="peer-checked:text-slate-200 peer-checked:bg-slate-950 peer-checked:font-bold">Femininos</label>
       </div>
     </section>
     <section class="p-12 pt-5" id="products">
-      <ul class="flex flex-wrap justify-center gap-10">
-        <li class="group">
-          <img class="group-hover:scale-110" src="./assets/img/product-1.jpg" alt="Imagem do produto">
-          <p class="brand font-medium">Zara</p>
-          <p class="name">Casaco branco</p>
-          <p class="price font-bold">R$100,00</p>
-          <button type="button" class="">
-            <i class="fa-solid fa-cart-plus group-hover:scale-125 duration-300"></i>
-            <span class="sr-only">Adicionar ao carrinho</span>
-          </button>
-        </li>
-
-
-        <li class="group">
-          <img class="group-hover:scale-110" src="./assets/img/product-1.jpg" alt="Imagem do produto">
-          <p class="brand font-medium">Zara</p>
-          <p class="name">Casaco branco</p>
-          <p class="price font-bold">R$100,00</p>
-          <button type="button" class="">
-            <i class="fa-solid fa-cart-plus group-hover:scale-125 duration-300"></i>
-            <span class="sr-only">Adicionar ao carrinho</span>
-          </button>
-        </li>
-        <li class="group">
-          <img class="group-hover:scale-110" src="./assets/img/product-1.jpg" alt="Imagem do produto">
-          <p class="brand font-medium">Zara</p>
-          <p class="name">Casaco branco</p>
-          <p class="price font-bold">R$100,00</p>
-          <button type="button" class="">
-            <i class="fa-solid fa-cart-plus group-hover:scale-125 duration-300"></i>
-            <span class="sr-only">Adicionar ao carrinho</span>
-          </button>
-        </li>
-        <li class="group">
-          <img class="group-hover:scale-110" src="./assets/img/product-1.jpg" alt="Imagem do produto">
-          <p class="brand font-medium">Zara</p>
-          <p class="name">Casaco branco</p>
-          <p class="price font-bold">R$100,00</p>
-          <button type="button" class="">
-            <i class="fa-solid fa-cart-plus group-hover:scale-125 duration-300"></i>
-            <span class="sr-only">Adicionar ao carrinho</span>
-          </button>
-        </li>
-        <li class="group">
-          <img class="group-hover:scale-110" src="./assets/img/product-1.jpg" alt="Imagem do produto">
-          <p class="brand font-medium">Zara</p>
-          <p class="name">Casaco branco</p>
-          <p class="price font-bold">R$100,00</p>
-          <button type="button" class="">
-            <i class="fa-solid fa-cart-plus group-hover:scale-125 duration-300"></i>
-            <span class="sr-only">Adicionar ao carrinho</span>
-          </button>
-        </li>
-      </ul>
+      <ul id="products-list" class="flex flex-wrap justify-center gap-10"></ul>
     </section>
   </main>
   <aside id="cart"
@@ -117,134 +61,10 @@
         <span class="sr-only">Fechar carrinho</span>
       </button>
     </div>
-    <ul id="cart-products" class="grid gap-2 flex-1 overflow-y-auto">
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-
-
-
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-      <li>
-        <button type="button" class="close-button">
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span class="sr-only">Remover <span class="name">Produto</span> do carrinho</span>
-        </button>
-        <img src="./assets/img/product-1.jpg" alt="Imagem do produto">
-        <div class="product-info">
-          <p class="name">Casaco Branco</p>
-          <p class="size">Tam. M</p>
-          <p class="price">R$100,00</p>
-        </div>
-        <div class="quantity">
-          <button type="button">-</button>
-          <span>1</span>
-          <button type="button">+</button>
-        </div>
-      </li>
-    </ul>
+    <ul id="cart-products" class="flex flex-col gap-2 flex-1 overflow-y-auto"></ul>
     <p class="bg-slate-200 p-2 rounded-lg text-green-700">
       Total:
-      <span id="total-price" class="font-bold">R$000,00</span>
+      <span id="total-value" class="font-bold">R$ 0,00</span>
     </p>
     <button type="button" class="bg-green-700 p-2 rounded-lg text-slate-200 font-bold">Finalizar compra</button>
   </aside>

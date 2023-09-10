@@ -1,10 +1,11 @@
-import { catalogo, convertValueToCurrency, readOnLocalStorage, renderProductsElementsOnTheList, saveOnLocalStorage } from "./utilidades"
+import { convertValueToCurrency, readOnLocalStorage, renderProductsElementsOnTheList, saveOnLocalStorage, getProductsOnCart } from "./utilidades"
 
 const cart = document.querySelector("#cart")
 const cartOpenButton = document.querySelector("#cart-open-button")
 const cartCloseButton = document.querySelector("#cart-close-button")
 const cartProductsElement = document.querySelector("#cart-products")
 const totalValueElement = document.querySelector("#total-value")
+const checkoutButton = document.querySelector("#checkout")
 let productsIdOnCart = readOnLocalStorage("cart") ?? {}
 
 function openCart() {
@@ -90,11 +91,12 @@ function createCartProductElement({ id, brand, name, price, image }) {
     return li
 }
 
-function getProductsOnCart() {
-    let productsOnCart = []
-    for (const id in productsIdOnCart) {
-        const product = catalogo.find(product => product.id === id.substring(8, 9))
-        productsOnCart.push(product)
+function goToCheckout() {
+    if (Object.keys(productsIdOnCart).length === 0) {
+        alert("Antes de finalizar a compra adicione produtos no carrinho")
+        return;
     }
-    return productsOnCart
+    window.location.href = "./checkout.html";
 }
+
+checkoutButton.addEventListener("click", goToCheckout)

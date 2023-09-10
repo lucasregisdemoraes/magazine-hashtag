@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Hashtag</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+
+<body class="min-h-screen flex flex-col bg-stone-200">
+    <header class="sticky top-0 shadow-lg shadow-slate-600 bg-slate-950 py-3 px-10 z-10 flex">
+        <a href="./index.html" class="hover:opacity-70 transition-opacity w-fit">
+            <img class="h-10" src="assets/logo/hashtag.svg" alt="Logo Hashtag">
+        </a>
+    </header>
+
+    <main class="grid flex-1 p-10 items-center justify-center">
+        <form class="flex gap-4 flex-wrap justify-center">
+            <section>
+                <h2>Seus dados</h2>
+                <div class="label-input">
+                    <label for="name">Nome</label>
+                    <input placeholder="Nome Sobrenome" type="text" name="name" id="name" required>
+                </div>
+                <div class="label-input">
+                    <label for="email">Email</label>
+                    <input placeholder="email@email.com" type="text" name="email" id="email" required>
+                </div>
+                <div class="label-input">
+                    <label for="phone">Telefone para contato</label>
+                    <input placeholder="(00) 000000000" type="text" name="phone" id="phone" required>
+                </div>
+            </section>
+            <section>
+                <h2>Seus dados</h2>
+                <div class="label-input">
+                    <label for="card-number">Número do cartão</label>
+                    <input placeholder="0000 0000 0000 0000" type="text" name="card-number" id="card-number" required>
+                </div>
+                <div class="two-inputs">
+                    <div class="label-input">
+                        <label for="cvv">CVV</label>
+                        <input placeholder="000" type="text" name="cvv" id="cvv" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="validity">Data de validade</label>
+                        <input placeholder=" 00/00" type="date" name="validity" id="validity" required>
+                    </div>
+                </div>
+                <div class="label-input">
+                    <label for="cep">CEP</label>
+                    <input placeholder="00000-000" type="text" name="cep" id="cep" required>
+                </div>
+                <div class="label-input">
+                    <label for="address">Endereço</label>
+                    <input placeholder="Rua, bairro" type="text" name="address" id="address" required>
+                </div>
+                <div class="two-inputs">
+                    <div class="label-input">
+                        <label for="address-number">Número</label>
+                        <input placeholder="000" type="text" name="address-number" id="address-number" required>
+                    </div>
+                    <div class="label-input">
+                        <label for="complement">Complemento</label>
+                        <input placeholder="Apt" type="text" name="complement" id="complement" required>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <ul class="overflow-y-auto max-h-80 mb-auto" id="products-list"></ul>
+                <p class="font-bold my-4">
+                    Total:
+                    <span class="text-green-700 text-lg" id="total"></span>
+                </p>
+                <button class="mt-auto bg-slate-200 font-bold p-2 rounded-lg hover:opacity-70 transition-opacity"
+                    type="submit">Finalizar
+                    compra</button>
+            </section>
+        </form>
+    </main>
+    <script src="./src/checkout.js" type="module"></script>
+</body>
+
+</html>

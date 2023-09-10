@@ -38,14 +38,13 @@ function filterBy(value) {
   renderProductsElementsOnTheList(products, createProductElement, productsList)
 }
 
-const addCartButtons = document.querySelectorAll("#products-list li button")
-addCartButtons.forEach(button => {
-  button.addEventListener("click", (e) => addProductToCart(e.currentTarget.dataset.id))
-})
-
 filterByAll.addEventListener("click", () => filterBy("all"))
 filterByMens.addEventListener("click", () => filterBy("mens"))
 filterByWomens.addEventListener("click", () => filterBy("womens"))
 
 renderProductsElementsOnTheList(catalogo, createProductElement, productsList)
 startCart()
+const addCartButtons = document.querySelectorAll("#products-list li button")
+addCartButtons.forEach(button => {
+  button.addEventListener("click", (e) => addProductToCart(e.currentTarget.dataset.id))
+})

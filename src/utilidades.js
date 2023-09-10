@@ -72,6 +72,16 @@ export function renderProductsElementsOnTheList(products, elementConstructor, li
     })
 }
 
+export function getProductsOnCart() {
+    let productsOnCart = []
+    const productsIdOnCart = readOnLocalStorage("cart")
+    for (const id in productsIdOnCart) {
+        const product = catalogo.find(product => product.id === id.substring(8, 9))
+        productsOnCart.push(product)
+    }
+    return productsOnCart
+}
+
 export function saveOnLocalStorage(key, value) {
     return localStorage.setItem(key, JSON.stringify(value))
 }

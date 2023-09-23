@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Hashtag</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./orders.css">
+</head>
+
+<body class="min-h-screen flex flex-col bg-stone-200">
+    <header class="sticky top-0 shadow-lg shadow-slate-600 bg-slate-950 py-3 px-10 z-10 flex">
+        <a href="./index.html" class="hover:opacity-70 transition-opacity w-fit">
+            <img class="h-10" src="assets/logo/hashtag.svg" alt="Logo Hashtag">
+        </a>
+    </header>
+
+    <main class="grid flex-1 py-16 px-6 items-center justify-center relative">
+        <a href="./index.html"
+            class="text-slate-900 hover:text-slate-700 underline absolute right-1/2 translate-x-1/2 top-6">Ir para
+            página inicial</a>
+        <ul id="order-history-list" class="grid gap-20"></ul>
+
+        <div id="empty-message" class="text-center grid gap-2 hide">
+            <p>Você ainda não fez nenhum pedido</p>
+            <a class="text-blue-700 hover:text-blue-500" href="./index.html">faça seu pedido aqui</a>
+        </div>
+    </main>
+    <script src="./src/orders.js" type="module"></script>
+</body>
+
+</html>

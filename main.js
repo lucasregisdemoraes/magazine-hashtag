@@ -13,7 +13,6 @@ function createProductElement({ id, brand, name, price, image, womans }, index) 
 
   li.classList.add("group")
   // li.style = `--delay: ${index * 200};`
-  console.log(li.style)
   li.innerHTML = `
     <img class="group-hover:scale-110" src="./assets/img/${image}" alt="Imagem de ${name}">
     <p class="brand font-medium">${brand}</p>

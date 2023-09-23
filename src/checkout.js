@@ -1,7 +1,8 @@
-import { convertValueToCurrency, getProductsOnCart, readOnLocalStorage, renderProductsElementsOnTheList } from "./utilidades"
+import { convertValueToCurrency, getProductsOnCart, readOnLocalStorage, removeFromLocalStorage, renderProductsElementsOnTheList, saveOnLocalStorage } from "./utilidades"
 
 const productsListElement = document.querySelector("#products-list")
 const totalElement = document.querySelector("#total")
+const form = document.querySelector("form")
 
 const products = getProductsOnCart()
 const productsIdOnCart = readOnLocalStorage("cart")
@@ -34,6 +35,29 @@ function getTotal() {
     return convertValueToCurrency(total)
 }
 
+function finishPurchase(e) {
+    e.preventDefault()
+
+    if (Object.keys(productsIdOnCart).length === 0) {
+        return;
+    }
+
+    const currentDate = new Date()
+    const currentOrder = {
+        date: currentDate,
+        order: productsIdOnCart
+    }
+
+    const orderHistory = readOnLocalStorage("order-history") ?? []
+    const updatedOrderHistory = [currentOrder, ...orderHistory]
+    console.log(updatedOrderHistory)
+    saveOnLocalStorage("order-history", updatedOrderHistory)
+    removeFromLocalStorage("cart")
+
+    window.location.href = window.location.origin + "/orders.html"
+}
+
+form.addEventListener("submit", e => finishPurchase(e))
 
 renderProductsElementsOnTheList(products, createProductElement, productsListElement)
 totalElement.textContent = getTotal()

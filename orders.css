@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hide {
+    @apply hidden;
+}
+
+#order-history-list>li {
+    @apply grid gap-2;
+}
+
+.products-list {
+    @apply grid gap-2;
+}
+
+.products-list li {
+    @apply bg-slate-200 rounded-lg flex gap-2 items-center p-1 relative;
+}
+
+.products-list li img {
+    @apply h-24 rounded-lg;
+}
+
+.products-list li .product-info {
+    @apply grid gap-2;
+}
+
+.products-list li .product-info .name {
+    @apply text-slate-950 text-sm leading-none;
+}
+
+.products-list li .product-info .size {
+    @apply text-slate-700 text-xs leading-none;
+}
+
+.products-list li .product-info .price {
+    @apply text-green-700 text-lg leading-none;
+}
+
+.products-list li .quantity {
+    @apply absolute bottom-2 right-2 flex gap-2 items-center text-xl font-bold text-slate-950;
+}

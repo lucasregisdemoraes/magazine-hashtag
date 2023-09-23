@@ -83,11 +83,15 @@ export function getProductsOnCart() {
 }
 
 export function saveOnLocalStorage(key, value) {
-    return localStorage.setItem(key, JSON.stringify(value))
+    localStorage.setItem(key, JSON.stringify(value))
 }
 
 export function readOnLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key))
+}
+
+export function removeFromLocalStorage(key) {
+    localStorage.removeItem(key)
 }
 
 export function convertValueToCurrency(value) {

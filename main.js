@@ -23,6 +23,11 @@ function createProductElement({ id, brand, name, price, image, womans }, index) 
       <span class="sr-only">Adicionar ao carrinho</span>
     </button>
   `
+  const addCartButtons = document.querySelectorAll("#products-list li button")
+  addCartButtons.forEach(button => {
+    button.onclick = (e) => addProductToCart(e.currentTarget.dataset.id)
+  })
+
   return li
 }
 
@@ -45,5 +50,5 @@ renderProductsElementsOnTheList(catalogo, createProductElement, productsList)
 startCart()
 const addCartButtons = document.querySelectorAll("#products-list li button")
 addCartButtons.forEach(button => {
-  button.addEventListener("click", (e) => addProductToCart(e.currentTarget.dataset.id))
+  button.onclick = (e) => addProductToCart(e.currentTarget.dataset.id)
 })
